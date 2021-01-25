@@ -1,10 +1,10 @@
 import { Controller, Get, Req, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { AdminGuard } from 'src/auth/guards/admin.guard';
+import { RolesGuard } from 'src/auth/guards/roles.guard';
 import { Roles } from 'src/auth/guards/roles.decorator';
 import { UsersService } from './users.service';
 
-@UseGuards(AuthGuard(), AdminGuard)
+@UseGuards(AuthGuard(), RolesGuard)
 @Controller('users')
 export class UsersController {
     constructor(private userServices: UsersService) {}

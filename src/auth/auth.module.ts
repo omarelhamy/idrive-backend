@@ -6,7 +6,6 @@ import { JWT_TOKEN_SECRET } from 'src/enviroments';
 import { UsersModule } from 'src/users/users.module';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
-import { AdminGuard } from './guards/admin.guard';
 import { JwtStrategy } from './jwt.strategy';
 
 @Module({
@@ -24,11 +23,7 @@ import { JwtStrategy } from './jwt.strategy';
   controllers: [AuthController],
   providers: [
     AuthService, 
-    JwtStrategy,
-    // {
-    //   provide: APP_GUARD,
-    //   useClass: AdminGuard,
-    // }, 
+    JwtStrategy
   ]
 })
 export class AuthModule {}

@@ -3,7 +3,7 @@ import { Reflector } from '@nestjs/core';
 import { UsersService } from 'src/users/users.service';
 
 @Injectable()
-export class AdminGuard implements CanActivate {
+export class RolesGuard implements CanActivate {
     constructor(
         private readonly reflector: Reflector,
         private userServices: UsersService
